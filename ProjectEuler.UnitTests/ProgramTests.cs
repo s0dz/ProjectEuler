@@ -1,15 +1,16 @@
 ﻿using NUnit.Framework;
-using NUnit.Framework.Internal;
 
 namespace ProjectEuler.UnitTests
 {
     [TestFixture]
     public class ProgramTests
     {
+        //private static readonly log4net.ILog Log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         [SetUp]
         public void SetUp()
         {
-            
+            //Log.Info("Tests are running.");
         }
 
         [Test]

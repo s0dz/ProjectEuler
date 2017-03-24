@@ -10,3 +10,5 @@ C:\Users\garre\dev\ProjectEuler\ProjectEuler\obj\Debug\ProjectEuler.pdb
 C:\Users\garre\dev\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.exe.config
 C:\Users\garre\dev\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.exe
 C:\Users\garre\dev\ProjectEuler\ProjectEuler\bin\Debug\ProjectEuler.pdb
+C:\Users\garre\dev\ProjectEuler\ProjectEuler\bin\Debug\log4net.dll
+C:\Users\garre\dev\ProjectEuler\ProjectEuler\bin\Debug\log4net.xml
