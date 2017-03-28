@@ -11,11 +11,11 @@ namespace ProjectEuler
         {
             log.Info("Application is running.");
 
-            Console.WriteLine("problem1: " + Problem1());
-            //Console.WriteLine("problem2: " + Problem2());
-            //Console.WriteLine("problem3: " + Problem3());
+            log.Info("problem1: " + Problem1());
+            log.Info("problem2: " + Problem2(4000000));
+            log.Info("problem3: " + Problem3(600851475143));
 
-            Console.Read();
+            // Console.Read();
         }
 
         // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
@@ -66,7 +66,7 @@ namespace ProjectEuler
 
         // The prime factors of 13195 are 5, 7, 13 and 29.
         // What is the largest prime factor of the number 600851475143 ?
-        public static List<int> Problem3(int number)
+        public static List<int> Problem3(long number)
         {
             var remaining = number;
             var factor = 2;
