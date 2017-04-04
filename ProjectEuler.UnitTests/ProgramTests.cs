@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace ProjectEuler.UnitTests
 {
@@ -38,6 +39,23 @@ namespace ProjectEuler.UnitTests
             }
 
             Assert.That(total, Is.EqualTo(number));
+        }
+
+        [Test]
+        public void Problem4()
+        {
+            var palindrome = 9009;
+            var number1 = 91;
+            var number2 = 99;
+
+            var palindromString = palindrome.ToString();
+            var part1 = palindromString.Substring(0, 2);
+            var part2 = palindromString.Substring(2, 2);
+
+            var charArray = part2.ToCharArray();
+            Array.Reverse(charArray);
+
+            Assert.That(part1, Is.EqualTo(charArray));
         }
     }
 }
