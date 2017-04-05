@@ -25,7 +25,7 @@ namespace ProjectEuler.UnitTests
             Assert.That(result, Is.EqualTo(answer));
         }
 
-        [Test]
+        //[Test]
         public void Problem3()
         {
             var number = 13195;
@@ -56,6 +56,8 @@ namespace ProjectEuler.UnitTests
             Array.Reverse(charArray);
 
             Assert.That(part1, Is.EqualTo(charArray));
+
+            var answers = Program.Problem4();
         }
     }
 }

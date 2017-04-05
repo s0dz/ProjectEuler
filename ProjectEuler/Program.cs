@@ -84,5 +84,41 @@ namespace ProjectEuler
 
             return primeFactors;
         }
+
+        public static List<int> Problem4()
+        {
+            var answer = new List<int>();
+            int hi;
+
+            for (var number1 = 99; number1 > 0; number1--)
+            {
+                for (var number2 = 99; number2 > 0; number2--)
+                {
+                    hi = number1 * number2;
+                    if (CheckForPalindrome(hi))
+                    {
+                        answer = new List<int>
+                        {
+                            number1,
+                            number2
+                        };
+                    }
+                }
+            }
+
+            return answer;
+        }
+
+        private static bool CheckForPalindrome(int palindrome)
+        {
+            var palindromString = palindrome.ToString();
+            var part1 = palindromString.Substring(0, 2);
+            var part2 = palindromString.Substring(2, 2);
+
+            var charArray = part2.ToCharArray();
+            Array.Reverse(charArray);
+
+            return (part1 == part2);
+        }
     }
 }
