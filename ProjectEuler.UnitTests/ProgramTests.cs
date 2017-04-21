@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NUnit.Framework;
 
 namespace ProjectEuler.UnitTests
@@ -41,8 +42,9 @@ namespace ProjectEuler.UnitTests
             Assert.That(total, Is.EqualTo(number));
         }
 
-        [Test]
-        public void Problem4()
+        [TestCase(2)]
+        [TestCase(3)]
+        public void Problem4(int numberOfDigits)
         {
             var palindrome = 9009;
             var number1 = 91;
@@ -57,7 +59,9 @@ namespace ProjectEuler.UnitTests
 
             Assert.That(part1, Is.EqualTo(charArray));
 
-            var answers = Program.Problem4();
+            var numbers = Program.Problem4(numberOfDigits);
+            var answer = numbers.Aggregate((accumulation, value) => accumulation * value);
+            // log answer
         }
     }
 }

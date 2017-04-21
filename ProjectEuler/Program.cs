@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectEuler
 {
@@ -85,23 +86,28 @@ namespace ProjectEuler
             return primeFactors;
         }
 
-        public static List<int> Problem4()
+        public static List<int> Problem4(int numberOfDigits)
         {
-            var answer = new List<int>();
-            int hi;
-
-            for (var number1 = 99; number1 > 0; number1--)
+            // lol? // Mutation
+            numberOfDigits = Int32.Parse(String.Concat(Enumerable.Repeat("9", numberOfDigits)));
+            var answer = new List<int>{0,0};
+            
+            for (var number1 = 1; number1 < numberOfDigits; number1++)
             {
-                for (var number2 = 99; number2 > 0; number2--)
+                for (var number2 = 1; number2 < numberOfDigits; number2++)
                 {
-                    hi = number1 * number2;
-                    if (CheckForPalindrome(hi))
+                    var product = number1 * number2;
+                    if (CheckForPalindrome(product))
                     {
-                        answer = new List<int>
+                        var temp = answer[0] * answer[1];
+                        if (number1 * number2 > temp)
                         {
-                            number1,
-                            number2
-                        };
+                            answer = new List<int>
+                            {
+                                number1,
+                                number2
+                            };
+                        }
                     }
                 }
             }
@@ -111,12 +117,16 @@ namespace ProjectEuler
 
         private static bool CheckForPalindrome(int palindrome)
         {
+            /*if (palindrome)*/
             var palindromString = palindrome.ToString();
+            if (palindromString.Length < 4 ) return false;
+
             var part1 = palindromString.Substring(0, 2);
             var part2 = palindromString.Substring(2, 2);
 
             var charArray = part2.ToCharArray();
-            Array.Reverse(charArray);
+            Array.Reverse(charArray); // Mutation
+            part2 = new string(charArray);
 
             return (part1 == part2);
         }
