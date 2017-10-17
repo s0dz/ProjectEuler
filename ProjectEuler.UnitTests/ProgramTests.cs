@@ -63,5 +63,17 @@ namespace ProjectEuler.UnitTests
             var answer = numbers.Aggregate((accumulation, value) => accumulation * value);
             // log answer
         }
+
+        [Test]
+        public void Problem5()
+        {
+            var lowerLimit = 1;
+            var upperLimit = 10;
+            var answer = 2520;
+
+            var result = Program.Problem5(lowerLimit, upperLimit);
+
+            Assert.That(result, Is.EqualTo(answer));
+        }
     }
 }
